@@ -13,18 +13,36 @@
     <![endif]-->
 </head>
 <body>
-    <div class="row">
+    <div id="row1" class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 style-01"><span>Row 1 Col 1</span></div>
     </div>
-    <div class="row">
+    <div id="row2" class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 style-02"><span>Row 2 Col 1</span></div>
         <div class="col-lg-6 col-md-6 col-sm-6 style-03"><span>Row 2 Col 2</span></div>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-md-3 col-sm-3 style-02"><span>Row 3 Col 1</span></div>
-        <div class="col-lg-3 col-md-3 col-sm-2 style-03"><span>Row 3 Col 2</span></div>
-        <div class="col-lg-3 col-md-4 col-sm-3 style-02"><span>Row 3 Col 3</span></div>
-        <div class="col-lg-2 col-md-2 col-sm-4 style-03"><span>Row 3 Col 4</span></div>
+    <div id="row3" class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 style-02 style-04">
+            <span>Row 3 Col 1</span>
+            <div id="row4" class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 style-05"><span>Row 4 Col 1</span></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 style-06"><span>Row 4 Col 2</span></div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 style-03 style-bw">
+            <span>Row 3 Col 2</span>
+            <div id="row5" class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 style-07"><span>Row 5 Col 1</span></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 style-08"><span>Row 5 Col 2</span></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 style-09">
+                    <span>Row 5 Col 3</span>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <span>nested 5 deep</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JS and jQuery libs-->
