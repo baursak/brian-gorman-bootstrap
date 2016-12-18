@@ -11,31 +11,106 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.0/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .rowspacer{padding: 10px}
+        input.validateme[type=text]:valid{color: green}
+        input.validateme[type=text]:valid ~ input-validation::before{color: green}
+        input.validateme[type=text]:invalid{color: red}
+    </style></sty>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="col-xs-12">&nbsp;</div>
-        </div>
-        <div class="row-fluid">
+    <div id="maincontainer" class="container">
+        <div id="row1" class="row rowspacer">
             <div class="col-xs-12">
-                <img class="img-responsive" src="img/banner-2500-250.jpg" alt="the banner">
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img class="img-responsive img-thumbnail" src="img/01-480-320.jpg" alt="the banner">
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img class="img-responsive img-rounded" src="img/02-480-320.jpeg" alt="the banner">
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img class="img-responsive img-circle" src="img/03-480-320.jpg" alt="the banner">
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img class="img-responsive img-circle" src="img/04-480-320.jpg" alt="the banner">
+                <!-- create a form block -->
+                <form role="form">
+                    <!-- use form groups to form items -->
+                    <div class="form-group">
+                        <label for="theEmail">Please enter your email:</label>
+                        <input type="email" class="form-control" id="theEmail" placeholder="email@somesite.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="thePWD">Password</label>
+                        <input type="password" class="form-control" id="thePWD" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="theDAY">What is today's date?</label>
+                        <input type="date" class="form-control" id="theDAY" placeholder="The Day">
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+                <!-- another form block -->
+                <form role="form">
+                    <!-- more forms -->
+                    <div class="form-group has-feedback">
+                        <label for="CCNUM">What is your credit card number:</label>
+                        <input type="text" class="form-control validateme" id="CCNUM" pattern="[0-9]{13,16}" placeholder="9999-9999-9999-9999" required>
+                        <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
+                        <div class="input-validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="colorpicker">Pick a color</label>
+                        <input type="color" id="colorpicker">
+                    </div>
+                </form>
+                <!-- horizontal will spread across the page -->
+                <form role="form" class="form-horizontal">
+                    <div id="successInput" class="form-group has-success has-feedback">
+                        <label for="inputSuccess2" class="control-label">Input with success</label>
+                        <input type="text" class="form-control" id="inputSuccess2">
+                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        <span class="help-block">Show this on success</span>
+                    </div>
+                    <div id="warningInput" class="form-group has-warning has-feedback">
+                        <label for="inputWarning2" class="control-label">Input with warning</label>
+                        <input type="text" class="form-control" id="inputWarning2">
+                        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                        <span class="help-block">Show this on warning</span>
+                    </div>
+                    <div id="errorInput" class="form-group has-error has-feedback">
+                        <label for="inputError2" class="control-label">Input with error</label>
+                        <input type="text" class="form-control" id="inputError2">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        <span class="help-block">Show this on error</span>
+                    </div>
+                </form>
+                <!-- inline will float freely -->
+                <form role="form" class="form-inline">
+                    <div id="anotherDiv1" class="form-group">
+                        <label for="username" class="control-label sr-only">Please enter your username</label>
+                        <input type="text" id="username" placeholder="someuser">
+                    </div>
+                    <div id="anotherDiv2" class="form-group">
+                        <label for="email2" class="control-label sr-only">Please enter your email</label>
+                        <input type="email" id="email2" placeholder="email@someemail.com">
+                    </div>
+                    <div id="anotherDiv3" class="form-group">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+                <!-- horizontal and static -->
+                <form role="form" class="form-horizontal">
+                    <div id="anotherDiv4" class="form-group">
+                        <label class="control-label col-sm-3">This is your username</label>
+                        <p class="form-control-static col-sm-9">john.q.public</p>
+                        <span class="help-block">Note: Your username is not an email address</span>
+                    </div>
+                    <div id="anotherDiv5" class="form-group">
+                        <label for="email3" class="control-label">Please enter your email</label>
+                        <input type="email" id="email3" class="form-control input-lg" placeholder="email@someemail.com">
+                    </div>
+                    <div id="anotherDiv6" class="form-group">
+                        <div class="col-md-2">
+                            <label for="email4" class="control-label">Yet another email</label>
+                        </div>
+                        <div class="col-md-7 col-md-push-3">
+                            <input type="email" id="email4" class="form-control input-sm" placeholder="email@someemail.com">
+                        </div>
+                    </div>
+                    <div id="anotherDiv7" class="form-group">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
